@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="jalankan()">
+
+</body>
+<script>
+    var ee;
+    txt = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates blanditiis quidem beatae ea delectus sequi impedit nihil enim! Sunt exercitationem distinctio excepturi quae illo harum ad, atque eveniet saepe magni delectus aut tenetur fugiat! Deserunt, alias ratione. Animi fuga maxime omnis, adipisci explicabo illum reprehenderit hic magnam odio aspernatur nihil architecto. Non, consequatur quod eum dignissimos ratione reiciendis ducimus minima ea eligendi nobis nemo recusandae aspernatur dolor quia soluta quas accusamus magni doloribus. Neque omnis delectus incidunt consequuntur repellendus est sit, sunt temporibus consectetur ut tempore? Ex assumenda enim nihil, repellendus ducimus beatae porro libero! Sint quia fuga autem eum magni aliquam ratione, voluptate dolor qui laboriosam voluptatibus facere voluptates eos. Odio, nisi veritatis voluptate nihil voluptatibus, quis est natus eius asperiores aperiam velit repellendus quae illo sint animi laudantium totam dolor, dolorem iusto officia accusantium deserunt. Tempora magni ducimus earum quas quaerat harum recusandae doloribus debitis mollitia animi voluptatum, repellendus laborum placeat consequatur quasi eos inventore sit aliquid et sapiente deleniti at qui eveniet! Possimus est repellendus molestias ipsam neque totam nostrum sunt alias libero natus reiciendis mollitia doloremque deleniti amet, perferendis odit, architecto hic enim eum rerum rem fugit! Fugiat eligendi ut praesentium aliquid qui dolorum corporis eius.'
+    function klik(e){
+        kopi = document.createElement('span');
+        kopi.innerHTML = e.target.innerHTML + ". ";
+        kopi.style.backgroundColor = e.target.style.backgroundColor;
+        kopi.addEventListener('click', hapus);
+        catatan.appendChild(kopi);
+    }
+    function hapus(e){
+        e.target.remove();
+    }
+    function lakukan(){
+        /*
+        for (i = 0; i <10; i++)
+        {
+            console.log(i)
+        }
+        */
+
+        /*
+            tempat = document.getElementById("layar");
+            for(i=0; i<10; i++){
+                tempat.innerHTML += i + '<br>'';
+            }
+        */
+
+        /*
+        tempat = document.getElementsByClassName("panel");
+        jumlah = tempat.length;
+        for(i=0; i<jumlah; i++){
+            tempat[i].innerHTML = '<h1>'+i+'</h1>';
+            tempat[i].style.fontFamily = 'sans-serif';
+            tempat[i].style.textAlign = 'center';
+        }
+        pilih = document.querySelectorAll('div.panel:nth-child(odd) h1')
+        jumlah = pilih.length;
+        for(i = 0; i<jumlah; i++){
+            pilih[i].style.backgroundColor = 'red';
+        }
+        */
+        /*
+        tempat = document.createElement('div');
+        tempat.innerHTML = 'Andi';
+
+        //ambil semua body, meskipun cuman berisi 1 body namun bodi tetaplah array berelemen satu
+        bodi = document.getElementsByTagName('body')[0];
+        bodi.appendChild(tempat);
+        */
+        /*
+        jumlah = 10;
+        for(i=0; i<jumlah; i++){
+            tempat = document.createElement('div');
+            tulisanbesar = document.createElement('h1');
+            tulisanbesar.innerHTML = i;
+            tempat.appendChild(tulisanbesar);
+            bodi.appendChild(tempat);
+        }
+        */
+        bodi = document.getElementsByTagName('body')[0];
+        txt = txt.split('. ');
+        jumlah = txt.length;
+        for(i=0 ; i<jumlah; i++){
+            tempat = document.createElement('div');
+            tempat.innerHTML = txt[i];
+            r1 = Math.floor(Math.random() * 16);
+            r1 = r1.toString(16);
+            tempat.style.backgroundColor = '#'+r1+r1+'FFFF';
+            tempat.addEventListener('click', klik);
+            bodi.appendChild(tempat);
+        }
+
+
+        catatan = document.createElement('div');
+        catatan.style.marginTop = '150px';
+        catatan.style.border = '1px solid black';
+        catatan.style.minHeight = '100px';
+        bodi.appendChild(catatan);
+    }
+    function jalankan(){
+        lakukan();
+    }
+</script>
+</html>
